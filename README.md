@@ -13,4 +13,11 @@ with other services over the internet and harness external APIs to develop their
 applications. The year will culminate in a large capstone project in which students
 will design and build their own web application.
 
+## Unit Outline
+
+- **Unit 0**: Python and JS Crash Course
+_In this unit we will cover the basics of the Python and JavaScript languages, especially
+ as they pertain to coding for web applications._
+- **Unit 1**: HTTP and OAuth2
+
 
