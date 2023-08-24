@@ -59,3 +59,29 @@ generative AI will be introduced, practice, and (ultimately" expected. Expectati
 per-assignment basis will be give regarding the usage of AI. Please [contact the instructor](mailto:jhammer@friendsbalt.org) 
 with any questions or concerns.
 
+## Grading
+This is a project-based course. While there could be a formal assessment thrown in, the bulk
+of student grades will be from projects. This course uses the department's universal rubric
+to assess each assignment. Grades are issued on a 4-point scale, although the school's
+gradebook (annoyingly) does not allow entry of scores using this scale. So, if you're
+interested, here is the table we use to convert between them. Note, this isn't _exactly_
+the conversion you may be used to:
+
+| Letter Grade | 4-point Score | Percentage Range |
+|--------------|---------------|------------------|
+|     A+       | 4.0           | 97% - 100%       |
+|     A        | 3.8           | 93% - 96%        |
+|     A-       | 3.6           | 90% - 92%        |
+|     B+       | 3.3           | 87% - 89%        |
+|     B        | 3.0           | 83% - 86%        |
+|     B-       | 2.7           | 80% - 82%        |
+|     C+       | 2.3           | 77% - 79%        |
+|     C        | 2.0           | 73% - 76%        |
+|     C-       | 1.7           | 70% - 72%        |
+|     D+       | 1.3           | 67% - 69%        |
+|     D        | 1.0           | 63% - 66%        |
+|     D-       | 0.5           | 60% - 62%        |
+|     F        | 0.0           | 59%              |
+
+For more information, visit the repostitory for the [grade calculator](https://github.com/jahAtFriends/Grade-Calculatron) we use.
+
