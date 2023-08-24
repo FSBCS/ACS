@@ -44,3 +44,18 @@ web application of their own invention. Students will work in partners to incorp
 their learning throughout the course. These projects will be displayed at the end-of-year
 showcase for members of the Friends community outside of the class.
 
+## Required Resources
+There is no textbook required for this course. However, there are several online resources
+which we will make use of throughout the year. These will be posted in the relevant unit
+folders in this repository. Students will however need a computer at home on which they
+can install and run a variety of development software. If a student does not have access
+to this, please let the instructor know and we'll work something out.
+
+## AI Statement
+Generative AI has become a major resource for developers accross the board. Knowledge of
+appropriate use of this technology is essential to any coder. Therefore, since students of
+this course should have attained a significant level of maturity and independence, use of
+generative AI will be introduced, practice, and (ultimately" expected. Expectations on a
+per-assignment basis will be give regarding the usage of AI. Please [contact the instructor](mailto:jhammer@friendsbalt.org) 
+with any questions or concerns.
+
