@@ -85,3 +85,27 @@ the conversion you may be used to:
 
 For more information, visit the repostitory for the [grade calculator](https://github.com/jahAtFriends/Grade-Calculatron) we use.
 
+## Policies Various and Sundry
+
+### Late Policy
+Following a timeline and strategic design are critical to application development. Hence, students should
+_always_ have at least _something_ to show for the work they've done. Ample work time will be given for
+each project. Work will be graded **as is** on the due date. Students are urged to keep their submission
+repositories up-to-date with regular commits and pushes.
+
+### Academic Integrity
+All work submitted must be the student's own. Any work which is not a student's own work will simply be
+stricken from their submission, which will subsequently be graded without it up to a maximum grade of C-.
+
+One's "own work" is sometimes challenging to discern in CS. It is common practice to draw on other code
+or even include large numbers of external dependencies one did not themselves write. When code is imported,
+a clear import statement will be used showing the code's origins. If the imported code is not included with
+the project, instructions for importing dependencies prior to runtime will suffice for citation. Otherwise,
+the code's author and reference location must be included with the submission.
+
+In the case of code drawn from research, including generative AI, I am expecting that you will be able to
+understand well enough to modify any part of it successfully and/or explain the workings of its various parts.
+If you can walk me or a classmate through the code successfully, I will consider this "fair use." The exception
+to this is that any novel algorithm or complete package should be cited and, wherever possible, encapsulated in its own
+file or function with proper attribution in the heading.
+
