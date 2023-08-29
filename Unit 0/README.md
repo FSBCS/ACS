@@ -1,5 +1,3 @@
-Certainly! Expanding the lesson summaries will give students a better idea of what to expect from each lesson. Here's the updated README with expanded summaries:
-
 # Unit 0: Python and JS Crash Course
 
 ## Summary
