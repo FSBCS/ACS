@@ -179,6 +179,64 @@ squared_list = [x ** 2 for x in my_list]
 
 ---
 
+#### 5. Introduction to Python Modules
+
+##### a. What is a Module?
+
+- A module is a file containing Python code. It could be definitions of variables, functions, or classes. You can import these into other Python scripts or notebooks to reuse code.
+
+##### b. Using the `import` Statement
+
+- To use a Python module, you have to import it using the `import` statement.
+
+```python
+import math
+```
+
+##### c. Accessing Functions and Variables
+
+- After importing, you can use the functions or variables defined in that module.
+
+```python
+print(math.sqrt(16))  # 4.0
+```
+
+##### d. Importing Specific Functions
+
+- You can also import only specific functions from a module.
+
+```python
+from math import sqrt
+
+print(sqrt(16))  # 4.0
+```
+
+##### e. Aliasing Modules
+
+- Sometimes modules have long names, and in such cases, you can use an alias.
+
+```python
+import numpy as np
+```
+
+##### f. Creating Your Own Modules
+
+- You can write your own Python file with a set of functions and import it just like built-in modules. 
+
+```python
+# my_module.py
+def greet(name):
+    return f"Hello, {name}"
+
+# main_script.py
+import my_module
+
+print(my_module.greet("John"))  # Hello, John
+```
+
+---
+
+
 ### Programming Assignment
 
 For this programming assignment, create a Python script that does the following:
@@ -187,26 +245,6 @@ For this programming assignment, create a Python script that does the following:
 2. Create a list of numbers from 1 to 20.
 3. Use your function to find all the even numbers in your list.
 4. Use a dictionary to store the frequency of each number in the list of even numbers.
-
-Example:
-
-```python
-def find_even_numbers(nums):
-    even_nums = [num for num in nums if num % 2 == 0]
-    return even_nums
-
-numbers = list(range(1, 21))
-even_numbers = find_even_numbers(numbers)
-
-frequency_dict = {}
-for num in even_numbers:
-    if num in frequency_dict:
-        frequency_dict[num] += 1
-    else:
-        frequency_dict[num] = 1
-
-print(frequency_dict)
-```
 
 ---
 
