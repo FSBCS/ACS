@@ -162,23 +162,8 @@ for i in range(5):
 
 For the programming assignment, please write a Python script that:
 1. Takes user input for their name and age.
-2. Uses the `type()` function to confirm that age is stored as an integer.
-3. Uses conditional statements to check if the user's age is over 18.
-4. Prints out a greeting that is appropriate for their age.
-
-Example:
-
-```python
-name = input("What is your name? ")
-age = int(input("What is your age? "))
-
-print("The age variable is of:", type(age))
-
-if age > 18:
-    print(f"Hello, {name}. You are an adult.")
-else:
-    print(f"Hello, {name}. You are not an adult.")
-```
+2. Uses conditional statements to check if the user's age is over 18.
+3. Prints out a greeting that is appropriate for their age.
 
 ---
 
