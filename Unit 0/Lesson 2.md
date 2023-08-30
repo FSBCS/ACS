@@ -10,6 +10,16 @@ In the second lesson, we'll explore Python functions and commonly used data stru
 
 ---
 
+### Table of Contents
+
+1. [Introduction to Functions](#1-Introduction-to-Functions)
+2. [Data Structures in Python](#2-Data-Structures-in-Python)
+3. [Manipulating Data Structures](#3-Manipulating-Data-Structures)
+4. [Looping Through Data Structures](#4-Looping-Through-Data-Structures)
+5. [Introduction to Python Modules](#5-Introduction-to-Python-Modules)
+6. [Programming Assignment](#Programming-Assignment)
+
+
 ### Talking Points
 
 #### 1. Introduction to Functions
