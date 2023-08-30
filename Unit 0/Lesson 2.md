@@ -43,6 +43,81 @@ def add(a, b):  # 'a' and 'b' are parameters
 result = add(5, 3)  # 5 and 3 are arguments
 ```
 
+##### e. Understanding `*args`
+
+- `*args` allows you to pass a variable number of non-keyword arguments to a function. It gathers extra positional arguments into a tuple.
+
+```python
+# Using *args to accept multiple arguments
+def sum_all(*args):
+    return sum(args)
+
+print(sum_all(1, 2, 3, 4))  # Output: 10
+```
+
+##### f. Understanding `**kwargs`
+
+- `**kwargs` allows you to pass a variable number of keyword arguments to a function. It gathers extra keyword arguments into a dictionary.
+
+```python
+# Using **kwargs to accept multiple keyword arguments
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_info(name='John', age=30, email='john@email.com')
+```
+
+##### g. Default Parameter Values
+
+- Default parameter values specify that a parameter will take a certain value if no argument is provided for it. 
+
+```python
+# Using default parameter values
+def greet(name, greeting="Hello"):
+    print(f"{greeting}, {name}")
+
+greet("John")  # Output: Hello, John
+greet("John", greeting="Hi")  # Output: Hi, John
+```
+
+##### h. Mixing Positional, Keyword Arguments, and Default Parameters
+
+- You can mix positional arguments, `*args`, keyword arguments, default parameters, and `**kwargs` in a function definition. However, they have to appear in this specific order.
+
+```python
+# Mixing *args, **kwargs, and default parameters
+def my_function(a, b, *args, greeting="Hello", **kwargs):
+    print(f"{greeting}, a: {a}, b: {b}")
+    print("Additional arguments:", args)
+    print("Additional keyword arguments:", kwargs)
+
+my_function(1, 2, 3, 4, greeting="Hi", x=5, y=6)
+```
+
+Output:
+
+```
+Hi, a: 1, b: 2
+Additional arguments: (3, 4)
+Additional keyword arguments: {'x': 5, 'y': 6}
+```
+
+##### i. Unpacking Sequences and Dictionaries
+
+- You can also use `*` and `**` to unpack sequences and dictionaries when calling a function.
+
+```python
+# Unpacking a list and a dictionary
+def my_function(a, b, c):
+    print(f"a: {a}, b: {b}, c: {c}")
+
+my_list = [1, 2]
+my_dict = {'c': 3}
+
+my_function(*my_list, **my_dict)  # Output: a: 1, b: 2, c: 3
+```
+
 #### 2. Data Structures in Python
 
 ##### a. Lists
