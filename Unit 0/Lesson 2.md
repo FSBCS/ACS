@@ -324,12 +324,31 @@ print(my_module.greet("John"))  # Hello, John
 
 ### Programming Assignment
 
-For this programming assignment, create a Python script that does the following:
+For this programming assignment, you'll put your understanding of functions, data structures, and looping constructs to the test. Create a Python script that performs the following tasks:
 
-1. Define a function `find_even_numbers` that takes a list as an argument and returns a new list containing only the even numbers from the original list.
-2. Create a list of numbers from 1 to 20.
-3. Use your function to find all the even numbers in your list.
-4. Use a dictionary to store the frequency of each number in the list of even numbers.
+1. Define a function `collect_info` that takes an arbitrary number of keyword arguments (**kwargs) and returns a dictionary containing this information.
+   
+   Example:
+   ```python
+   info = collect_info(name="John", age=30, email="john@email.com")
+   print(info)  # Output: {'name': 'John', 'age': 30, 'email': 'john@email.com'}
+   ```
+
+2. Define another function `remove_keys` that takes a dictionary and a list of keys to be removed from that dictionary. The function should return a new dictionary without those keys.
+   
+   Example:
+   ```python
+   new_info = remove_keys(info, ['age'])
+   print(new_info)  # Output: {'name': 'John', 'email': 'john@email.com'}
+   ```
+   
+3. Create a list of tuples, where each tuple contains the name and age of an individual. Use a list comprehension to create a new list containing the names of individuals who are at least 21 years old.
+
+   Example list of tuples: `people = [("John", 30), ("Jane", 20), ("Emily", 22)]`
+
+4. Finally, use your `collect_info` and `remove_keys` functions to collect some information about a person (at least 4 key-value pairs) and then remove at least 2 of those keys. Print the original and the modified dictionaries to verify your functions work as expected.
+
+By completing this assignment, you'll demonstrate your grasp of Python functions, **kwargs, and data manipulation using lists and dictionaries.
 
 ---
 
