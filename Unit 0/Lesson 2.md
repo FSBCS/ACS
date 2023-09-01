@@ -397,7 +397,8 @@ if 'apple' in {'apple', 'banana', 'cherry'}:
 
 # Using 'in' with a dictionary (checks keys by default)
 if 'age' in {'name': 'Alice', 'age': 30}:
-    print("The key 'age' is in the dictionary!")```
+    print("The key 'age' is in the dictionary!")
+```
 
 ---
 
