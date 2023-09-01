@@ -85,6 +85,17 @@ the conversion you may be used to:
 
 For more information, visit the repostitory for the [grade calculator](https://github.com/jahAtFriends/Grade-Calculatron) we use.
 
+## Grade Categories
+Grading will be done by total points. In general, projects will be worth 100 points each. Formal assessments will be within
+20-50 points when given (depending on the scope), and daily assignments will be worth 3 points.
+
+### Daily Assignments
+Programming assignments will often be given at the end of a skill-building lesson. These are worth 3 points each and are,
+strictly speaking, optional; _however_ it is **highly** recommended that you complete them as they give you the chance to
+practice the skills learned and offer you some extra points. These will be graded on completeness. The instructor reserves
+the right to change this policy and require students to complete the assignments if it is deemed necessary. You will be
+notified if this occurs.
+
 ## Policies Various and Sundry
 
 ### Late Policy
