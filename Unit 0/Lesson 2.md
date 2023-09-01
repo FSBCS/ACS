@@ -322,33 +322,82 @@ print(my_module.greet("John"))  # Hello, John
 ---
 
 
-### Programming Assignment
+# Assignment: Simple Task Manager
 
-For this programming assignment, you'll put your understanding of functions, data structures, and looping constructs to the test. Create a Python script that performs the following tasks:
+## Objective
 
-1. Define a function `collect_info` that takes an arbitrary number of keyword arguments (**kwargs) and returns a dictionary containing this information.
-   
-   Example:
-   ```python
-   info = collect_info(name="John", age=30, email="john@email.com")
-   print(info)  # Output: {'name': 'John', 'age': 30, 'email': 'john@email.com'}
-   ```
+In this assignment, you'll create a simple task manager to keep track of your to-dos and completed tasks. Your task manager should be able to add tasks, mark them as complete, and show the list of to-dos and completed tasks.
 
-2. Define another function `remove_keys` that takes a dictionary and a list of keys to be removed from that dictionary. The function should return a new dictionary without those keys.
-   
-   Example:
-   ```python
-   new_info = remove_keys(info, ['age'])
-   print(new_info)  # Output: {'name': 'John', 'email': 'john@email.com'}
-   ```
-   
-3. Create a list of tuples, where each tuple contains the name and age of an individual. Use a list comprehension to create a new list containing the names of individuals who are at least 21 years old.
+## Requirements
 
-   Example list of tuples: `people = [("John", 30), ("Jane", 20), ("Emily", 22)]`
+1. **Data Structures**: Use a dictionary to store the tasks. Within that dictionary, use a list to keep track of to-do tasks and another list for completed tasks. The initial structure should look like this:
 
-4. Finally, use your `collect_info` and `remove_keys` functions to collect some information about a person (at least 4 key-value pairs) and then remove at least 2 of those keys. Print the original and the modified dictionaries to verify your functions work as expected.
+    ```python
+    tasks = {
+        'todo': [],
+        'completed': []
+    }
+    ```
 
-By completing this assignment, you'll demonstrate your grasp of Python functions, **kwargs, and data manipulation using lists and dictionaries.
+2. **Add Task**: Write a function called `add_task` that takes a task description and adds it to the 'todo' list.
+
+    ```python
+    def add_task(task_description, tasks):
+        pass  # Your code here
+    ```
+
+3. **Complete Task**: Write a function called `complete_task` that takes a task description, removes it from the 'todo' list, and adds it to the 'completed' list.
+
+    ```python
+    def complete_task(task_description, tasks):
+        pass  # Your code here
+    ```
+
+4. **List Tasks**: Write a function called `list_tasks` that prints the tasks in both the 'todo' and 'completed' lists.
+
+    ```python
+    def list_tasks(tasks):
+        pass  # Your code here
+    ```
+
+5. **Duplicate Check**: Use a set to keep track of all task descriptions ever added (either to 'todo' or 'completed') to ensure that no task is added more than once.
+
+    ```python
+    all_tasks = set()
+    ```
+
+6. **Main Function**: Write a `main` function that allows the user to add, complete, and list tasks until they decide to exit the program.
+
+    ```python
+    def main():
+        pass  # Your code here
+    ```
+
+### Helpful note: The "in" Operator in Conditionals
+
+You've seen the "in" operator being used in loops to iterate through elements in a list or other iterable objects. The "in" operator can also be used within conditionals to check for the existence of a value within a data structure.
+
+#### Syntax
+
+```python
+if value in some_data_structure:
+    # Do something
+```
+
+#### Example
+
+```python
+# Using 'in' with a list
+if 3 in [1, 2, 3, 4, 5]:
+    print("3 is in the list!")
+
+# Using 'in' with a set
+if 'apple' in {'apple', 'banana', 'cherry'}:
+    print("Apple is in the set!")
+
+# Using 'in' with a dictionary (checks keys by default)
+if 'age' in {'name': 'Alice', 'age': 30}:
+    print("The key 'age' is in the dictionary!")```
 
 ---
 
