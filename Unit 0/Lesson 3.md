@@ -214,3 +214,44 @@ print(uppercase_words)  # Output: ['APPLE', 'BANANA', 'CHERRY']
 ```
 
 By understanding and utilizing `map()`, Python developers can perform iterative transformations in a clean and Pythonic way.
+
+## Homework Assignment: Pythonic Weather Analysis
+
+**Background**:
+Weather data is crucial for various applications from climate research to daily planning activities. In this assignment, you will be performing some data analysis on a list of daily temperatures to gain insights using Pythonic code techniques.
+
+**Dataset**:
+You're provided with a list of dictionaries representing a month of daily weather data:
+```python
+daily_temperatures = [
+    {"date": "2023-09-01", "temperature": 22},
+    {"date": "2023-09-02", "temperature": 25},
+    # ... and so on for the month.
+]
+```
+
+**Tasks**:
+
+1. **Warm Days Filter**:
+   - Use a list comprehension to extract all dates where the temperature was above 24 degrees Celsius.
+   
+2. **Temperature Conversion**:
+   - Convert the Celsius temperatures to Fahrenheit (formula: `F = C * 9/5 + 32`).
+   - Use the `map()` function to create a new list that includes dictionaries with both Celsius and Fahrenheit values.
+   
+3. **Weekend Averages**:
+   - Given a separate list with the days of the week for each date:
+     ```python
+     days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", ...]
+     ```
+   - Use a lambda function and list comprehension to compute the average temperature for weekends (Saturdays and Sundays).
+
+4. **Bonus Task**: 
+   - Identify any two consecutive days where the temperature difference was more than 5 degrees Celsius. Return these dates.
+
+**Tips**:
+- Remember to make your code Pythonic! Think about readability, simplicity, and efficiency.
+- Use the Python techniques discussed in the lesson, like list comprehensions, lambda functions, and the map() function.
+
+**Submission**:
+Please submit a `.py` file named `weather_analysis.py` containing your code and a brief documentation/comment on top explaining your approach for each task.
