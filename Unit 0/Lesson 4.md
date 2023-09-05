@@ -1,7 +1,7 @@
 # Advanced Topics in Computer Science: Web Technology
 ### Lesson 4: Object-Oriented Programming
 
-***Table of Contents***
+**Table of Contents**
 
 - [Introduction](#introduction)
 - [Classes](#classes)
