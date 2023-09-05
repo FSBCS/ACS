@@ -180,27 +180,28 @@ class Car(Vehicle):
 - Private attributes and methods are name mangled with __double_leading_underscore  
 - Protected attributes use _single_leading_underscore by convention
 
-Programming Assignment: Deck of Cards
-For this assignment, you will model a Deck of playing Cards using object-oriented programming techniques in Python.
+
+
+## Programming Assignment: Deck of Cards
+
+For this assignment, you will model a Deck of playing Cards using object-oriented programming techniques in Python. 
 
 Requirements:
 
-Create a Card class representing a single playing card. It should have suit (Hearts, Diamonds, Clubs, Spades) and value (Ace, 2-10, Jack, Queen, King) attributes.
+1. Create a Card class representing a single playing card. It should have suit (Hearts, Diamonds, Clubs, Spades) and value (Ace, 2-10, Jack, Queen, King) attributes.
 
-Create a Deck class representing a deck of 52 standard playing cards. It should have a cards attribute containing a list of Card objects.
+2. Create a Deck class representing a deck of 52 standard playing cards. It should have a cards attribute containing a list of Card objects.
 
-Implement a deal_card() method in the Deck class to deal (pop and return) a single card from the deck.
+3. Implement a deal_card() method in the Deck class to deal (pop and return) a single card from the deck.
 
-Implement a shuffle() method in the Deck class that randomly shuffles the order of the cards in the deck.
+4. Implement a shuffle() method in the Deck class that randomly shuffles the order of the cards in the deck.
 
-Create a Hand class representing a hand of cards. It should have a cards attribute containing dealt cards.
+5. Create a Hand class representing a hand of cards. It should have a cards attribute containing dealt cards.
 
-Implement a take_card() method in Hand to take a card from a Deck instance and add it to the hand.
+6. Implement a take_card() method in Hand to take a card from a Deck instance and add it to the hand.
 
-Implement a total_value() method in Hand that returns the total value of the cards using this scheme:
+7. Implement a total_value() method in Hand that returns the total value of the cards using this scheme:
 
-Number cards are worth their number (2 through 10). Face cards (Jack, Queen, King) are worth 10 points each. Aces are worth 1 or 11 points (your choice).
+   Number cards are worth their number (2 through 10). Face cards (Jack, Queen, King) are worth 10 points each. Aces are worth 1 or 11 points (your choice). 
 
-Demonstrate your implementation by creating a Deck instance, shuffling it, dealing 5 cards into a Hand instance, and then printing the value of the hand.
-
-This covers the key areas of defining classes, attributes, methods, inheritance, and utilizing object instances. Please let me know if you have any other questions!
+8. Demonstrate your implementation by creating a Deck instance, shuffling it, dealing 5 cards into a Hand instance, and then printing the value of the hand.
