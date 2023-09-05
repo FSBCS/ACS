@@ -3,7 +3,7 @@
 
 **Table of Contents**
 1. [Introduction to Pythonic Code](#1-introduction-to-pythonic-code)
-2. [List Comprehensions](#2.-list-comprehensions)
+2. [List Comprehensions](#2-list-comprehensions)
 3. [Lambda Functions](#3-lambda-functions)
 4. [The Zen of Python](#4-the-zen-of-python)
 5. [The `map()` Function](#5-the-map-function)
