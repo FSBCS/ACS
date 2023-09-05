@@ -92,3 +92,6 @@
 ## VI. Conclusion
 
 Git and GitHub offer robust tools for software development and collaboration. With foundational knowledge, developers can efficiently manage projects, coordinate with teams, and maintain a rich record of project evolution. As one advances, more intricate Git functionalities await exploration, enhancing development capabilities and project management.
+
+
+[Visualize Git](https://git-school.github.io/visualizing-git)
