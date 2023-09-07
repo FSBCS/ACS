@@ -20,30 +20,104 @@
 
 ---
 
-## 2. List Comprehensions
+**Lecture Notes: Python Comprehensions**
 
-List comprehensions are a concise way to create lists.
+---
 
-**Basic Syntax**:
+**Objective**: By the end of this lesson, you should be able to understand and use comprehensions in Python to create and transform data collections more concisely.
+
+---
+
+**2. List Comprehensions**:
+
+**Syntax**:
 ```python
-[expression for item in iterable]
+[expression for item in iterable if condition]
 ```
 
 **Examples**:
+- Create a list of squares:
+  ```python
+  squares = [x*x for x in range(10)]
+  ```
 
-* Creating a list of squares for numbers from 1 to 10:
-```python
-squares = [x**2 for x in range(1, 11)]
-print(squares)  # Output: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-```
-
-* Filtering out even numbers:
-```python
-evens = [x for x in range(1, 11) if x % 2 == 0]
-print(evens)  # Output: [2, 4, 6, 8, 10]
-```
+- List of even numbers:
+  ```python
+  evens = [x for x in range(10) if x % 2 == 0]
+  ```
 
 ---
+
+**3. Set Comprehensions**:
+
+**Syntax**:
+```python
+{expression for item in iterable if condition}
+```
+
+**Example**:
+- Create a set of squares without duplicates:
+  ```python
+  squares_set = {x*x for x in range(-5, 6)}
+  ```
+
+---
+
+**4. Dictionary Comprehensions**:
+
+**Syntax**:
+```python
+{key_expression: value_expression for item in iterable if condition}
+```
+
+**Examples**:
+- Map numbers to their squares:
+  ```python
+  square_dict = {x: x*x for x in range(5)}
+  ```
+
+- Create a dictionary of vowels mapped to their ASCII values:
+  ```python
+  vowels = {char: ord(char) for char in 'aeiou'}
+  ```
+
+---
+
+**5. Nested Comprehensions**:
+
+You can nest comprehensions inside other comprehensions. However, use this judiciously as it can make the code less readable.
+
+**Example**:
+- Matrix transposition:
+  ```python
+  matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  transposed = [[row[i] for row in matrix] for i in range(3)]
+  ```
+
+---
+
+**6. Advantages of Comprehensions**:
+
+- **Conciseness**: Reduces the amount of code required.
+- **Readability**: Can improve readability for simple cases.
+- **Performance**: List comprehensions can sometimes be faster than equivalent `for` loop constructs.
+
+---
+
+**7. Points of Caution**:
+
+- **Over-complication**: Avoid nesting too many comprehensions or including complex logic.
+- **Memory**: List comprehensions create a list in memory. For large datasets, consider using generator expressions `(x*x for x in range(10))` which are more memory-efficient.
+
+---
+
+**8. Practice Exercises**:
+
+1. Create a list of all the odd numbers between 1 and 20 using a list comprehension.
+2. Create a dictionary that maps each character of a string to its ASCII value.
+3. Use a set comprehension to find the unique vowels in a given string.
+
+
 
 ## 3. Lambda Functions
 
