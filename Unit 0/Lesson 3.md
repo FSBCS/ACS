@@ -326,6 +326,3 @@ daily_temperatures = [
 **Tips**:
 - Remember to make your code Pythonic! Think about readability, simplicity, and efficiency.
 - Use the Python techniques discussed in the lesson, like list comprehensions, lambda functions, and the map() function.
-
-**Submission**:
-Please submit a `.py` file named `weather_analysis.py` containing your code and a brief documentation/comment on top explaining your approach for each task.
