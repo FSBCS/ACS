@@ -52,3 +52,52 @@ MRO and multiple inheritance can affect code stability:
 - Understand the MRO of classes using `classname.mro()`.
 - In complex scenarios, consider calling base class methods explicitly instead of using `super()`.
 - Use mixins to simplify and clarify multiple inheritance structures.
+
+## Example
+Here's a code example that illustrates a situation where the MRO might not behave as one might initially expect:
+
+```python
+class A:
+    def show(self):
+        print("Method in A")
+
+class B(A):
+    def show(self):
+        print("Method in B")
+        super().show()
+
+class C(A):
+    def show(self):
+        print("Method in C")
+        super().show()
+
+class D(B, C):
+    def show(self):
+        print("Method in D")
+        super().show()
+
+# Create an instance of D
+d = D()
+d.show()
+
+print(D.mro())
+```
+
+Expected Output:
+
+```
+Method in D
+Method in B
+Method in C
+Method in A
+[<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>]
+```
+
+Here's a breakdown:
+
+1. Calling `d.show()` starts with the method in `D`.
+2. Within `D.show()`, `super().show()` refers to the next class in the MRO after `D`, which is `B`.
+3. After executing `B.show()`, the `super().show()` inside it will move to the next class in the MRO after `B`, which is `C`.
+4. Lastly, within `C.show()`, the `super().show()` will refer to the method in `A`.
+
+Despite the fact that `B` and `C` both inherit from `A`, the method in `A` is called only once. This is because of the linearization of the MRO, which ensures each class appears only once in the order.
