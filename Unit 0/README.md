@@ -15,9 +15,6 @@ In this lesson, we'll combine an introduction to Python's basic syntax with an e
 - Conditional Statements ([Python If Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements))
 - Loops ([Python For and While Loops](https://docs.python.org/3/tutorial/controlflow.html#for-statements))
 
-#### Programming Assignment
-Write a Python script that takes user input for their name and age, uses conditional statements to check if the age is over 18, and then prints out an appropriate greeting based on the age.
-
 ---
 
 ### Lesson 2: Functions and Modules in Python
@@ -29,8 +26,6 @@ We'll focus on defining functions and using Python modules to organize code.
 - Defining Functions ([Python Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions))
 - Python Modules ([Python Modules](https://docs.python.org/3/tutorial/modules.html))
 
-#### Programming Assignment
-Create a Python module containing functions for basic arithmetic operations (add, subtract, multiply, divide) and a main script that imports and uses them.
 
 ---
 
@@ -43,8 +38,6 @@ This lesson introduces idiomatic Python practices, such as list comprehensions a
 - List Comprehensions ([Python List Comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions))
 - Lambda Functions ([Python Lambda Functions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions))
 
-#### Programming Assignment
-Write a Python script to filter even numbers from a list using list comprehensions and lambda functions.
 
 ---
 
@@ -57,8 +50,6 @@ We'll dive into Object-Oriented Programming in Python by learning how to create 
 - Classes and Objects ([Python Classes](https://docs.python.org/3/tutorial/classes.html))
 - Inheritance ([Python Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance))
 
-#### Programming Assignment
-Create a Python class for a simple bank account with methods for depositing, withdrawing, and displaying balance.
 
 ---
 
@@ -72,8 +63,6 @@ We'll explore advanced features of Python's object-oriented programming, such as
 - Polymorphism ([Python Polymorphism](https://www.w3schools.com/python/gloss_python_polymorphism.asp))
 - Abstract Classes ([Python Abstract Classes](https://docs.python.org/3/library/abc.html))
 
-#### Programming Assignment
-Extend your bank account class to include different types of accounts (e.g., Savings and Checking) utilizing inheritance, encapsulation, and polymorphism.
 
 ---
 
@@ -87,8 +76,6 @@ In this combined lesson, we'll introduce JavaScript's basic syntax, including va
 - Conditional Statements ([JavaScript If Statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else))
 - Loops ([JavaScript Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration))
 
-#### Programming Assignment
-Write a JavaScript script that takes user input for their name and age, uses conditional statements to check if the age is over 18, and then displays an appropriate greeting on the console based on the age.
 
 ---
 
@@ -101,8 +88,6 @@ This lesson focuses on defining functions and understanding variable scope in Ja
 - Functions ([JavaScript Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions))
 - Variable Scope ([JavaScript Scope](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variable_scope))
 
-#### Programming Assignment
-Create a JavaScript function that reverses a string and another that filters out even numbers from an array.
 
 ---
 
@@ -115,9 +100,6 @@ We will introduce HTML and explore JavaScript's ability to manipulate the Docume
 - Basic HTML ([HTML Basics](https://developer.mozilla.org/en-US/docs/Web/HTML/Element))
 - DOM Manipulation ([JavaScript DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction))
 
-#### Programming Assignment
-Create a simple HTML page with a JavaScript function that changes the text of a paragraph element when a button is clicked.
-
 ---
 
 ### Lesson 9: Asynchronous Programming in JavaScript
@@ -128,9 +110,6 @@ This lesson introduces asynchronous programming concepts in JavaScript, like cal
 #### Topics Covered
 - Callbacks ([JavaScript Callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function))
 - Promises and Async/Await ([JavaScript Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise))
-
-#### Programming Assignment
-Create a JavaScript function that fetches random jokes from an API and displays them on an HTML page using async/await.
 
 ---
 
@@ -144,7 +123,5 @@ This lesson provides an overview of popular JavaScript frameworks and libraries,
 - Introduction to Angular ([Angular](https://angular.io/start))
 - Introduction to jQuery ([jQuery](https://learn.jquery.com/))
 
-#### Programming Assignment
-Create a simple "To-Do List" application using either vanilla JavaScript or one of the introduced frameworks or libraries.
 
 ---
