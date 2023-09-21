@@ -52,6 +52,32 @@
     showArguments("first", "second", 3, 4); // Outputs: { '0': 'first', '1': 'second', '2': 3, '3': 4 }
     ```
 
+
+- **Immediately Invoked Function Expressions (IIFE):**
+
+  IIFEs are functions that are defined and run as soon as they are encountered. They're useful for creating private scopes, especially when trying to avoid polluting the global scope, and for module-like structures.
+
+  The syntax involves wrapping the function declaration in parentheses to make it an expression and then appending `()` at the end to invoke it.
+
+  ```javascript
+  (function() {
+      var privateVar = "I'm private!";
+      console.log(privateVar);  // Outputs: I'm private!
+  })();
+  ```
+
+  **Note:** Variables defined within an IIFE are not accessible outside its scope. This helps in encapsulating logic and variables, avoiding unintended interactions with other parts of the code.
+
+  - **IIFE with Parameters:** 
+
+    IIFEs can also accept parameters. This can be useful for passing in values or dependencies:
+
+    ```javascript
+    (function(greeting, name) {
+        console.log(greeting + ", " + name + "!");
+    })("Hello", "Alice");  // Outputs: Hello, Alice!
+    ```
+
 ---
 
 #### **2. Variable Scope in Functions**
@@ -128,8 +154,104 @@ Scope determines the accessibility or visibility of variables, functions, and ob
     let myLetVar = 10;
     ```
 
-It's essential to be aware of hoisting in JavaScript, especially when using `var`, to avoid potential pitfalls and unexpected behaviors in your code.
+  It's essential to be aware of hoisting in JavaScript, especially when using `var`, to avoid potential pitfalls and unexpected behaviors in your code.
 
+- **Closures:**
+
+  Closures are a fundamental concept in JavaScript that allow a function to remember and access variables from an outer function even after that outer function has completed its execution. Essentially, closures give you access to an outer function's scope from an inner function. They are created every time a function is created, at function creation time.
+
+  - **Basic Closure Example:**
+
+    ```javascript
+    function createCounter() {
+        let count = 0;
+        return function() {
+            return count++;
+        };
+    }
+
+    const counter = createCounter();
+    console.log(counter());  // Outputs: 0
+    console.log(counter());  // Outputs: 1
+    ```
+
+    In the example above, the inner anonymous function retains access to the `count` variable of the outer `createCounter` function. Each time we invoke the `counter` function, it remembers the value of `count` from the previous invocation.
+
+  - **Practical Use Cases for Closures:** 
+
+    Closures are commonly used in JavaScript for:
+    - Data encapsulation and private data.
+    - Creating function factories, where a function generates and returns another function.
+    - Implementing callbacks with specific, pre-set arguments.
+    - Dynamic function generation.
+
+  - Semi-Practical Example:
+
+    ```JavaScript
+    function createCounterModule() {
+      // This variable remains private and can't be accessed from outside this function.
+      let count = 0;
+
+      // Return an object with methods that operate on the count variable.
+      return {
+          increment: function() {
+              count++;
+          },
+          decrement: function() {
+              count--;
+          },
+          getCurrentCount: function() {
+              return count;
+          }
+      };
+    }
+    // Using the counter module
+    const counter = createCounterModule();
+
+    counter.increment();
+    console.log(counter.getCurrentCount());  // Outputs: 1
+
+    counter.increment();
+    console.log(counter.getCurrentCount());  // Outputs: 2
+
+    counter.decrement();
+    console.log(counter.getCurrentCount());  // Outputs: 1
+
+    // Attempting to access the count variable directly fails.
+    console.log(counter.count);  // Outputs: undefined
+    ```
+  - **Caveats:**
+
+    While closures are powerful, it's important to be cautious of unintentional side effects. For example, when using closures inside loops, you might inadvertently capture the same variable multiple times, leading to unexpected behaviors.
+
+    ```javascript
+    for (var i = 0; i < 3; i++) {
+        setTimeout(function() {
+            console.log(i);
+        }, 1000);
+    }
+    // This will output 3, 3, 3 instead of 0, 1, 2 due to closure capturing the variable `i`.
+    ```
+
+    Solutions to this issue include using `let` in the loop (since `let` has block scope) or creating a new scope using an IIFE:
+
+    ```javascript
+    for (let i = 0; i < 3; i++) {
+      setTimeout(function() {
+          console.log(i);
+      }, 1000);
+    }
+    ```
+    Or:
+    ```javascript
+    for (var i = 0; i < 3; i++) {
+      (function(value) {
+        setTimeout(function() {
+            console.log(value);
+        }, 1000);
+      })(i);
+    }
+    ```
 ---
 
 #### **3. Arrow Functions**
