@@ -209,6 +209,32 @@ Certainly! Here's the homework assignment for retrieving and displaying the NASA
 
 **Hint**: Remember to handle possible errors in your fetch request using `.catch()` or try/catch with async/await. You can use the `alert()` function to create a popup alert box with the error message.
 
+Sure thing. Here's the expanded submission section:
+
+---
+
 ### Submission:
 
-- Submit your HTML and JavaScript files, ensuring that your solution fetches the NASA image of the day and displays the relevant information on the webpage.
+**Requirements**:
+
+- Your solution should be divided into two separate files:
+  1. **HTML File**: This will contain the structure of your webpage.
+  2. **JavaScript File**: This will contain the logic for fetching data from the NASA API and updating the DOM.
+
+- **Linking the JavaScript File**:
+   - Your JavaScript file should be linked in the HTML file. If your JavaScript file is named `script.js` and is in the same directory as your HTML file, you can link it as follows:
+
+   ```html
+   <script src="script.js" defer></script>
+   ```
+
+   Place this script tag right before the closing `</body>` tag in your HTML document. The `defer` attribute ensures that the script is executed after the HTML is parsed.
+
+**How to Submit**:
+
+1. Ensure that your HTML file has sections for displaying the image, its title, its description, and the date.
+2. Ensure that your JavaScript file contains the logic to fetch the NASA image of the day, handle possible errors, and populate the HTML with the fetched data.
+3. Submit both your HTML and JavaScript files for evaluation.
+
+**Hint**: Make sure the path in the `src` attribute of the script tag correctly points to your JavaScript file. If you placed the JavaScript file in a folder, you'd need to include the folder name in the path, like so: `<script src="folderName/script.js" defer></script>`.
+
