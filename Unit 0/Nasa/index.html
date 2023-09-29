@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NASA Photo of the Day</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./script.js"></script>
+  <style>
+    
+  </style>
+</head>
+<head>
+  <title>NASA Photo of the Day</title>
+  <div class="head-banner">
+    <h1>NASA Photo of the Day</h1>
+  </div>
+  <div class="image-container">
+    <img id="image" src="https://apod.nasa.gov/apod/image/1901/LOmbradellaTerraFinazzi.jpg" alt="NASA Photo of the Day">
+    <div class="image-info">
+      <h2 id="image-title"></h2>
+      <p id="image-explanation"></p>
+      <div class="date-control">
+        <input type="date" id="date" name="date" placeholder="YYYY-MM-DD" onchange="anotherDate()">
+        <button id="today" onclick="todayDate()">Today</button>
+      </div>
+  </div>
+</head>
+</html>
