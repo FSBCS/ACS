@@ -6,6 +6,8 @@
 
 ### Lesson 1: Introduction to Python Syntax and Control Structures
 
+[Go to Lesson Page](./Lesson%201.md)
+
 #### Overview
 In this lesson, we'll combine an introduction to Python's basic syntax with an exploration of its control structures. We'll cover variables, data types, indentation, as well as conditional statements and loops.
 
@@ -19,6 +21,8 @@ In this lesson, we'll combine an introduction to Python's basic syntax with an e
 
 ### Lesson 2: Functions and Modules in Python
 
+[Go to Lesson Page](./Lesson%202.md)
+
 #### Overview
 We'll focus on defining functions and using Python modules to organize code.
 
@@ -30,6 +34,8 @@ We'll focus on defining functions and using Python modules to organize code.
 ---
 
 ### Lesson 3: Pythonic Code
+
+[Go to Lesson Page](./Lesson%203.md)
 
 #### Overview
 This lesson introduces idiomatic Python practices, such as list comprehensions and lambda functions.
@@ -43,6 +49,8 @@ This lesson introduces idiomatic Python practices, such as list comprehensions a
 
 ### Lesson 4: Introduction to Object-Oriented Programming in Python
 
+[Go to Lesson Page](./Lesson%204.md)
+
 #### Overview
 We'll dive into Object-Oriented Programming in Python by learning how to create classes and objects.
 
@@ -54,6 +62,8 @@ We'll dive into Object-Oriented Programming in Python by learning how to create 
 ---
 
 ### Lesson 5: Advanced Object-Oriented Programming in Python
+
+[Go to Lesson Page](./Lesson%205.md)
 
 #### Overview
 We'll explore advanced features of Python's object-oriented programming, such as encapsulation, polymorphism, and abstract classes.
@@ -68,6 +78,8 @@ We'll explore advanced features of Python's object-oriented programming, such as
 
 ### Lesson 6: Introduction to JavaScript Syntax and Control Structures
 
+[Go to Lesson Page](./Lesson%206.md)
+
 #### Overview
 In this combined lesson, we'll introduce JavaScript's basic syntax, including variables and data types, and delve into control structures like conditional statements and loops.
 
@@ -81,6 +93,8 @@ In this combined lesson, we'll introduce JavaScript's basic syntax, including va
 
 ### Lesson 7: Functions and Scoping in JavaScript
 
+[Go to Lesson Page](./Lesson%207.md)
+
 #### Overview
 This lesson focuses on defining functions and understanding variable scope in JavaScript.
 
@@ -93,6 +107,8 @@ This lesson focuses on defining functions and understanding variable scope in Ja
 
 ### Lesson 8: JavaScript and the DOM
 
+[Go to Lesson Page](./Lesson%208.md)
+
 #### Overview
 We will introduce HTML and explore JavaScript's ability to manipulate the Document Object Model (DOM).
 
@@ -103,6 +119,8 @@ We will introduce HTML and explore JavaScript's ability to manipulate the Docume
 ---
 
 ### Lesson 9: Asynchronous Programming in JavaScript
+
+[Go to Lesson Page](./Lesson%209.md)
 
 #### Overview
 This lesson introduces asynchronous programming concepts in JavaScript, like callbacks, promises, and async/await.
