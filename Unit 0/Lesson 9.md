@@ -30,10 +30,6 @@ JavaScript is often used in environments (like browsers) where blocking on I/O w
 
 ---
 
-Of course! Here's a more detailed treatment of Ajax:
-
----
-
 ## Ajax
 
 Ajax stands for **Asynchronous JavaScript and XML**. It allows for the ability to send and retrieve data from a server asynchronously without having to reload the entire page. This means web applications can update their UI based on new data without causing a full page refresh, creating a more seamless and efficient user experience.
