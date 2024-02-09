@@ -129,7 +129,7 @@ This section dives into the different types of tokens used in OAuth 2.0 flows:
 
 ## Additional OAuth 2.0 Definitions:
 
-** Front Channel & Back Channel:**
+**Front Channel & Back Channel:**
 
 * **Front Channel:** Refers to communication channels that are accessible to the user agent (e.g., web browser, mobile app). Usually this means including information directly in the URL.
 
