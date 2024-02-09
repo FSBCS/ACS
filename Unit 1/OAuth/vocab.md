@@ -1,3 +1,5 @@
+# OAuth 2.0 Vocabulary
+
 The following is a list of vocabulary terms that are used in the OAuth 2.0 framework. Understanding these terms is essential for grasping the concepts and mechanics of OAuth 2.0.
 
 ## Roles:
