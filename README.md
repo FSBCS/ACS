@@ -16,33 +16,15 @@ will design and build their own web application.
 
 ## Unit Outline
 
-### Unit 0: Python and JS Crash Course
-In this unit, students will gain an intuitive understanding of the Python and JavaScript
-languages and become comfortable using them to build increasingly complex applications.
+### Unit 0: Python and OOP Review/Crash Course
+In this unit, students will be given a rapid introduction to/review of Python and Object-Oriented
+Programming. These topics will ultimately be foundational to our future studies. Tools and techniques
+for the course will also be discussed.
+
+### Unit 1: Halloween Break
+The month of October in ACS is traditionally devoted to the annual ACS Haunted House. Students will work
+in teams to build a technologically interesting feature of the house in the QAT lab.
  
-### Unit 1: HTTP and OAuth2
-We will cover the basics of the HTTP protocol, with a focus on the request methods for
-CRUD operations. We will use these operations to interact with some simple APIs.
-Subsequently, students will look at more sophisticated APIs requiring API keys and ultimately
-the OAUth2 protocol. In this final step, students will learn how to navigate authentication
-and authorization control flows by hand and strategies for integrating them into web applications.
-
-### Unit 3: Voice Assistant Project
-This unit consists entirely of a project conducted in pairs to build a voice assistant with a
-Raspberry Pi that can interact with the Google API (using the device authorization flow) and
-perform basic operations on the user's behalf (such as sending or reading email).
-
-### Unit 4: Building a RESTful API
-We will examine API interactions from the reverse side: that of the API developer. This unit
-will summarize much of the previous course work using the Symfony framework. A crash course in
-PHP and SQL will also be included. Students will develop both an authorization and resource
-server enabling them to provide user data securely over the web.
-
-### Unit 5: Capstone Project
-In this final unit, students will work to design, develop, and test a working prototype of a
-web application of their own invention. Students will work in partners to incorporate all of
-their learning throughout the course. These projects will be displayed at the end-of-year
-showcase for members of the Friends community outside of the class.
 
 ## Required Resources
 There is no textbook required for this course. However, there are several online resources
