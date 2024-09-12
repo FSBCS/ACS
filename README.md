@@ -5,21 +5,18 @@ understand the principles of application development and team collaboration, and
 confident in their ability to adapt to new and emergent technologies. For more
 information on CS curriculum at Friends, please see the [department's website](https://quakerlabs.org).
 
-## 2023 Overview
+## 2024 - 25 Overview
 
-The theme for this course rotates on an anual basis. For the 2023 - 24 academic year,
-that theme will be "Internet Technologies." We will cover the basics of coding for and
-with the web. Students will learn how to build applications capable of communicating
-with other services over the internet and harness external APIs to develop their own
-applications. The year will culminate in a large capstone project in which students
-will design and build their own web application.
+The theme for this course rotates on an anual basis. For the 2024 - 25 academic year,
+that theme will be _Algorithms_. We will cover several of the "canonical" algorithms
+and experiment with their applications. As time allows, we will investigate contemporary
+research in algorithms, including machine learning.
 
 ## Unit Outline
 
-### Unit 0: Python and OOP Review/Crash Course
-In this unit, students will be given a rapid introduction to/review of Python and Object-Oriented
-Programming. These topics will ultimately be foundational to our future studies. Tools and techniques
-for the course will also be discussed.
+### Unit 1: Algorithm Basics
+In this unit, we will discuss what makes an algorithm. Students will write their first set of programs,
+complete a project, and learn to evaluate algorithms by runtime and memory efficiency.
 
 ### Unit 1: Halloween Break
 The month of October in ACS is traditionally devoted to the annual ACS Haunted House. Students will work
