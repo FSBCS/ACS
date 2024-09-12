@@ -5,7 +5,7 @@ understand the principles of application development and team collaboration, and
 confident in their ability to adapt to new and emergent technologies. For more
 information on CS curriculum at Friends, please see the [department's website](https://quakerlabs.org).
 
-## 2034
+## 2024 - 25 Overview
 
 The theme for this course rotates on an anual basis. For the 2024 - 25 academic year,
 that theme will be _Algorithms_. We will cover several of the "canonical" algorithms
