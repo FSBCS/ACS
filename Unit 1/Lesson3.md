@@ -35,6 +35,7 @@ class QuickFind:
 
 Quick Union uses a tree structure to represent sets. Each element points to its parent, and the root of the tree represents the connected component. The `find(p)` operation follows parent pointers until it reaches the root, while the `union(p, q)` operation attaches the root of one tree to the root of another.
 
+**Example Diagrams are temporarily innacurate** (sorry)
 ### Example:
 1. **Initial State**: Each element is its own root.
 ```mermaid
