@@ -3,7 +3,7 @@
 ## Arrays
 Arrays are always an efficient data structure allowing both accesses and writes in $O(1)$ time. This is possible because arrays make use of _direct addressing_, that is each "cell" of the array is assigned an index corresponding to a fixed memory address. If the memeory address is known (by way of the index) the contents of that address can be made instantly available to the CPU.
 
-There is a big trade-off here: we must always use a fixed set of sequential integer indices: $0,1,2,3,...$. Additionally, in most languages, in order to allocate memory efficiently, the size of the array is fixed after initialization.
+There is a big trade-off here: we must always use a fixed set of sequential integer indices: $0,1,2,3,...$ . Additionally, in most languages, in order to allocate memory efficiently, the size of the array is fixed after initialization.
 
 ## Motivation
 
