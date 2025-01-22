@@ -165,7 +165,7 @@ Where $h(k)$ is our initial hashing of $k$ and $p$ is the number of probes we ne
 
 This is not the only kind of probing we could use another technique known as quadratic probing:
 
-$$H(k,p) = (h(k) + p^2) \qquad mod \qquad p$$
+$$H(k,p) = (h(k) + p^2) \quad mod \quad p$$
 
 In other words, in case of a collision we shift to the right one, then four, then nine, and so on. Quadratic hashing helps to solve the problem of _clustering_: simple linear probing tends to group data into large clumps.
 
