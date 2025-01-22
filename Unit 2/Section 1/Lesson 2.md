@@ -74,7 +74,7 @@ Don't forget, however, that hashes need to be _deterministic_, that is, they mus
 
 Another challenge is deciding how many buckets/chains to create. If we have only a few buckets, the number of elements in each will be large and lookups slow. Ideally, we want a number of buckets proportional to the quantity of entries in the hash table. If we have a good hash functions, then we can expect lookups to run in constant time on average.
 
-Now, if we know how many entries there will be ahead of time, this is prety easy to do: just make that many buckets! Most of the time, though, we're not so lucky. Instead, the best we can do is keep the size of the table roughly proportional to the number of entries. If we do that, then, on average, all of the chains will be of a constant length no matter how many entries are added. Here's what that might look like:
+Now, if we know how many entries there will be ahead of time, this is prety easy to do: just make that many buckets. Most of the time, though, we're not so lucky. Instead, the best we can do is keep the size of the table roughly proportional to the number of entries. If we do that, then, on average, all of the chains will be of a constant length no matter how many entries are added. Here's what that might look like:
 
 ```python
 import ChainMap
@@ -120,6 +120,10 @@ A couple of things to note--
 
 $$\frac{kn}{n/2} = 2k$$
 
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 ## Open Addressing
 
 We have just given a solution to the collision problem by efficiently collecting all of the elements with the same hashes into chains. Now, we will present an alternative strategy: *Open Addressing*.
@@ -155,7 +159,9 @@ For those that are interested, let us briefly acknowledge what is generally requ
 
 Note that because we deal with collisions by shifting the position of an element in the array, our hash function is essentially expanded by the probing step. In other words, where an element _actually_ ends up (its _true_ hash) is determined by its initial hash _plus_ the number of probes we need to do. Thus we can define our updated hash function:
 
-$$H: K \times \{ 0, 1, 2, ..., n-1 \} \rightarrow \{ 0, 1, 2, ..., n-1 \}$$
+
+Display math example:
+\[ H: K \times \{ 0, 1, 2, ..., n-1 \} \rightarrow \{ 0, 1, 2, ..., n-1 \} \]
 
 For linear probing, our extended hash function would be defined as:
 
