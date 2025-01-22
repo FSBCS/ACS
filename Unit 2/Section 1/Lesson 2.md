@@ -155,7 +155,7 @@ For those that are interested, let us briefly acknowledge what is generally requ
 
 Note that because we deal with collisions by shifting the position of an element in the array, our hash function is essentially expanded by the probing step. In other words, where an element _actually_ ends up (its _true_ hash) is determined by its initial hash _plus_ the number of probes we need to do. Thus we can define our updated hash function:
 
-$$H: K \times { 0, 1, 2, ..., n-1} \rightarrow { 0, 1, 2, ..., n-1}$$
+$$H: K \times \{ 0, 1, 2, ..., n-1 \} \rightarrow \{ 0, 1, 2, ..., n-1 \}$$
 
 For linear probing, our extended hash function would be defined as:
 
