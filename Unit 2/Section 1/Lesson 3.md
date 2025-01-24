@@ -1,0 +1,89 @@
+# Lesson 3: Hash Functions
+
+So far we've discussed ways to store and structure data in a hash table using a hash function. In this lesson, we cover the final component, actually writing the hash function.
+
+## Built-in `hash()` Function
+
+Python comes with a built-in function, `hash()` which takes any data and hashes it if possible.
+
+
+## Examples of Hashing Different Data Types
+
+Below is a table showing different data types and their corresponding hash values using Python's built-in `hash()` function:
+
+| Data Type | Data (x)       | Hash (hash(x))                |
+|-----------|----------------|-------------------------------|
+| Integer   | 42             | `42`                          |
+| Float     | 3.14           | `322818021289917443`          |
+| Tuple     | (1, 2, 3)      | `529344067295497451`          |
+| List      | [1, 2, 3]      | Not hashable                  |
+| String    | "hello"        | `-1446124798350477317`        |
+| Object    | SomeObject() | Implemented using the `__hash__()` magic method |
+
+Note: Lists are not hashable in Python, so attempting to hash a list will result in a `TypeError`.
+
+## Requirements for Hash Functions
+
+We need to make three main assumptions about hash functions. Namely, that every hash function is:
+
+1. Consistent
+2. Compatible with `==`
+3. Uniform
+
+In other words, the hash function must hash the same key to the same value each time. Similarly, if two objects are equal, they should have the same hash. This applies particularly when we are hashing more complex classes which may have more than one way to consider equality. Finally, we also require our hash function to spread the data out evenly over the hash space, even if the keys chosen are structured in some way.
+
+Since we're the ones designing the hash function now, we'll have to check these conditions.
+
+## Hashing Techniques
+
+As we see from the table, diffent data is hashed in different ways. Let's look at a few techniques for each.
+
+### Integers
+
+Integers are by far the easiest to hash. In this course, we'll simply hash an integer `k` into a hash table of length `n` by computing
+
+$$h(k) = k \quad mod \; m$$
+
+There are other options, but this is the easiest.
+
+It is clearly compatible with assumptions 1 and 2. Assumption 3, however depends on our choice of `m`. Powers of $2$ are bad because they don't consider all of the bits of the integer, as are values one less than powers of two because they don't consider the _order_ of the bits. It turns out that _prime numbers_ not too close to a power of $2$ are ideal.
+
+### Floats
+
+As with integers, we want to take full advantage of _all_ of the bits of a number to optimize the spread in the hash table. Since we need to hash to an integer, it may seem hard to do this with any arbitrary decimal. Actually, though, if we remember that all data is just a bunch of binary digits, we can just consider it an integer and do the same modular arithmetic on that.
+
+
+### Strings
+
+You might now be picking up on the trick: coming up with a hash is much easier if we have a nice way to convert things to integers. Annoyingly, this is not standardized between versions of Python, but it is in Java:
+
+```python
+def string_to_int(s, radix=31):
+    result = 0
+    for char in s:
+        result = result * radix + ord(char)
+    return result
+```
+
+This is a clever algorithm that considers the string as a base-31 number. This turns out to be a good base, providing sufficient distribution while being easy to compute.
+
+### Tuples
+It turns out that we can use the same exact trick with tuples by combining the _hashes_ of each element into a base-31 number.
+
+```python
+def tuple_hash(t):
+    h = 0
+    for item in t:
+        h = h * 31 + hash(item)
+    return h
+```
+
+### Lists
+
+You may remember from the table above that lists are not hashable. Why can't we just use the same trick as tuples?
+
+The problem here is bigger than the algorithm: lists make terrible keys because they are _mutable_. In other words, they are not compatible with the `==` operation over time unless we just don't appeal to the values they contain. Some languages, like Java, handle this by reporting the hash code as its memory address. For obvious reasons, that is usually a terrible choice, so Python simply does not allow it.
+
+### Complex Objects
+
+What about objects with a whole bunch of fields of different types? If we simply consider the fields to be one big tuple, we've already solved the problem! This is generally the best way to implement the `__hash__()` magic method, but be careful: you should limit the hashed fields to those that are _immutable_, lest we encounter the same problem as lists!
