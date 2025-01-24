@@ -39,103 +39,27 @@ Quick Union uses a tree structure to represent sets. Each element points to its 
 ### Example:
 1. **Initial State**: Each element is its own root.
 ```mermaid
-graph TD
-    subgraph "Initial State"
+graph LR
+    subgraph Initial_State
         A0((0))
         B1((1))
         C2((2))
         D3((3))
         E4((4))
-        F5((5))
-        G6((6))
-        H7((7))
-        I8((8))
-        J9((9))
     end
 ```
+Parent Array:
 
-Parent array:
-| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-|---|---|---|---|---|---|---|---|---|---|
-| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-</br></br>
-2. **After union(4,3)**: The root of 4 points to the root of 3.
+| Index | 0 | 1 | 2 | 3 | 4 |
+|-------|---|---|---|---|---|
+| Value | 0 | 1 | 2 | 3 | 4 |
+
+
+2. **After Union(2,3)**: Attach the root of 2 to the root of 3.
 ```mermaid
 graph TD
-    subgraph "After union(4,3)"
-        K0((0))
-        L1((1))
-        M2((2))
-        N3((3)) --- O4((4))
-        P5((5))
-        Q6((6))
-        R7((7))
-        S8((8))
-        T9((9))
-    end
+    A((Blah)) --- B
 ```
-parent array:
-| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-|---|---|---|---|---|---|---|---|---|---|
-| 0 | 1 | 2 | 3 | **3** | 5 | 6 | 7 | 8 | 9 |
-<br/><br/>
-3. After union(3,8): The root of 3 points to the root of 8.
-```mermaid
-graph TD
-
-    subgraph "After union(3,8)"
-        U0((0))
-        V1((1))
-        W2((2))
-        X3((3)) --- Y4((4))
-        Z5((5))
-        AA6((6))
-        AB7((7))
-        AC8((8)) --- X3
-        AD9((9))
-    end
-```
-```mermaid
-graph TD
-
-    subgraph "After union(6,5)"
-        AE0((0))
-        AF1((1))
-        AG2((2))
-        AH3((3)) --- AI4((4))
-        AJ5((5)) --- AK6((6))
-        AL7((7))
-        AM8((8)) --- AH3
-        AN9((9))
-    end
-```
-```mermaid
-graph TD
-
-    subgraph "After union(9,4)"
-        AO0((0))
-        AP1((1))
-        AQ2((2))
-        AR3((3)) --- AS4((4))
-        AT5((5)) --- AU6((6))
-        AV7((7))
-        AW8((8)) --- AR3
-        AX9((9)) --- AR3
-    end
-```
-```mermaid
-graph TD
-    subgraph "After union(2,1)"
-        AY0((0))
-        AZ1((1)) --- BA2((2))
-        BB3((3)) --- BC4((4))
-        BD5((5)) --- BE6((6))
-        BF7((7))
-        BG8((8)) --- BB3
-        BH9((9)) --- BB3
-    end
-```
-
 ### Example:
 
 ```python
