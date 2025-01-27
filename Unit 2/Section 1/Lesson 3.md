@@ -18,7 +18,7 @@ Below is a table showing different data types and their corresponding hash value
 | Tuple     | (1, 2, 3)      | `529344067295497451`          |
 | List      | [1, 2, 3]      | Not hashable                  |
 | String    | "hello"        | `-1446124798350477317`        |
-| Object    | SomeObject() | Implemented using the `__hash__()` magic method |
+| Object    | SomeObject()   | Implemented using the `__hash__()` magic method |
 
 Note: Lists are not hashable in Python, so attempting to hash a list will result in a `TypeError`.
 
@@ -52,6 +52,7 @@ It is clearly compatible with assumptions 1 and 2. Assumption 3, however depends
 
 As with integers, we want to take full advantage of _all_ of the bits of a number to optimize the spread in the hash table. Since we need to hash to an integer, it may seem hard to do this with any arbitrary decimal. Actually, though, if we remember that all data is just a bunch of binary digits, we can just consider it an integer and do the same modular arithmetic on that.
 
+Doing this by hand in python is a little bit of a nightmare, so it's best left up to the implementation given by the interpreter.
 
 ### Strings
 
@@ -87,3 +88,45 @@ The problem here is bigger than the algorithm: lists make terrible keys because 
 ### Complex Objects
 
 What about objects with a whole bunch of fields of different types? If we simply consider the fields to be one big tuple, we've already solved the problem! This is generally the best way to implement the `__hash__()` magic method, but be careful: you should limit the hashed fields to those that are _immutable_, lest we encounter the same problem as lists!
+
+## Universal Hashing (*)
+All of our efficiency calculations in previous lessons relied on assumption 3, that hashing results in a uniform distribution. Of course, it is totally possible that in a worst-case scenario, some adversary could choose only keys that all hashed to the same value. That would be a real problem!
+
+With a sufficiently irreversible hash function, it is hard to imagine this could actually happen, but sometimes we do get really unlucky. In either case, it turns out that it can be possible to defeat the adversary on average using a technique called **Universal Hashing**.
+
+The idea is to define as set $H$ containing _multiple_ hash functions. If we define each function in such a way that it maps very differently from the other functions, we could defeat the adversary by simply choosing a different function. Since we can't do that efficiently after we've already done several insertions, we simply choose one of the functions at random at the start; then, sometimes we'll lose to the adversary, but on average we'll come out on top!
+
+Mathematically, we say that the the set $H$ is a universal family if:
+
+$$x,y \in K, x\neq y \Rightarrow |\{h \in H: h(x) = h(y)\} \leq \frac{|H|}{n}$$
+
+In other words, if we choose any two elements from $K$ (even maliciously), then a random choice of $h$ will result in a collision in at most $\frac{1}{n}$ of the time, that is _uniformly_.
+
+### Carter-Wegman Method
+It turns out we can relatively easy define such a family of hash functions! To do this, we just choose some prime number $p$ _greater_ than the size of the key space. Then, every hash function in the family can be expressed as:
+
+$$h_{a,b}(x) = ((ax + b) \quad mod\; p) \quad mod \; n$$
+
+where $a$ and $b$ are integers less than $p$ and $a\neq 0$
+
+In practice choosing a sufficiently large $p$ is often impractical, since the key space is likely to be large. In practice, we often use a value of $p$ just a little larger than $n$.
+
+## Assignment
+
+Consider the following class:
+
+```python
+class Student:
+    def __init__(id, fn, ln, gl, gpa):
+        self.id = id
+        self.first_name = fn
+        self.last_name = ln
+        self.grade_level = gl
+        self.gpa = gpa
+    
+    def __hash__():
+        pass
+        #get the hash of the student
+```
+
+Correctly implement the hash magic method.
