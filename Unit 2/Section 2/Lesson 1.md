@@ -112,3 +112,56 @@ graph TD
 
     style G fill:transparent,stroke:transparent
 ```
+<br/>
+
+### Heap Structure
+Because heaps are complete binary trees, it is easy to represent them as an array, starting with the root of the tree and proceding layer-by-layer, left-to-right. The above example would become:
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+|   | X | P | L | E | M | A |
+
+Then, the parent of the $i$-th node is given by `i // 2` and the childrent of the $i$-th node are `2 * i` and `2 * i + 1`. Note that, to make the math work, we skip the 0<sup>th</sup> index.
+
+<div>
+<p style="border: 1px solid black; background-color: rgba(255, 0, 0, 0.1); padding: 10px;">
+<strong>Note 2.2.1</strong><br/>
+The element with the greatest priority is always located at the top of the heap (i.e. in index 1).
+</p>
+</div>
+
+### Keeping the Heap in Order
+#### Insertions
+Let's say that we wanted to add the letter "Q" to our example heap. There's really only one place we could add it: at the end of the array. Thus our heap would become:
+
+```mermaid
+graph TD
+    A((X)) --> B((P))
+    A --> C((L))
+    B --> D((E))
+    B --> E((M))
+    C --> F((A))
+    C --> G((Q))
+    style G fill:red,stroke:transparent;
+    style C fill:red,stroke:transparent;
+```
+<br/>
+
+That's a problem, because now we've violated the heap condition: Q is larger than its parent, L. We can fix this problem by performing a "float" operation. To float a node, we compare it with its parent and, if it is larger, swap the node with the parent. One iteration of that operation would yield
+
+```mermaid
+graph TD
+    A((X)) --> B((P))
+    A --> C((Q))
+    B --> D((E))
+    B --> E((M))
+    C --> F((A))
+    C --> G((L))
+
+    style G fill:green,stroke:green
+    style C fill:green,stroke:green
+```
+Now, we're okay, because Q is smaller than its parent, X. Notice that, as we float Q up, we don't need to check the children on the other side of the node. In this example, by swapping L and Q, it is not possible that Q would be less than A (or whatever might have been over there) since Q is greater than L, so it must also be greater than all of its new children (which were themselves less than L, by the heap condition).
+
+#### Dequeueing the Maximum
+
