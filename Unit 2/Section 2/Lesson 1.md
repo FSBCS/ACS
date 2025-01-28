@@ -75,9 +75,11 @@ class LinkedListPQ:
 
 Binary heaps help us solve the problem in the motivating example above by storing data that is "kind of" ordered, but not completely. At any given moment, the element of the highest priority is at the top of the heap; when it is popped off, the next highest element will be relatively easy to compute. We can achieve this using a binary tree with a specific ordering:
 
-<div style="border: 1px solid black; background-color: rgba(255, 0, 0, 0.1); padding: 10px;">
-    <strong>Definition 2.2.1</strong><br>
-    <strong>Binary Heap</strong>: A complete binary tree that satisfies the heap condition.
+<div>
+<p style="border: 1px solid black; background-color: rgba(255, 0, 0, 0.1); padding: 10px;">
+<strong>Definition 2.2.1</strong><br/>
+<strong>Binary Heap</strong>: A complete binary tree that satisfies the heap condition.
+</p>
 </div>
 
 <br/>
@@ -92,5 +94,21 @@ graph TD
     B --> E(( ))
     C --> F(( ))
     C --> G(( ))
+    style G fill:transparent,stroke:transparent
+```
+
+<br/>
+
+By **heap condition** we mean that every node is larger than both of its two children. A binary tree that satisfies this condition is **heap ordered**.
+
+```mermaid
+graph TD
+    A((X)) --> B((P))
+    A --> C((L))
+    B --> D((E))
+    B --> E((M))
+    C --> F((A))
+    C --> G(( ))
+
     style G fill:transparent,stroke:transparent
 ```
