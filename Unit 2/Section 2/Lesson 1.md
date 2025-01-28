@@ -165,3 +165,41 @@ Now, we're okay, because Q is smaller than its parent, X. Notice that, as we flo
 
 #### Dequeueing the Maximum
 
+In the note above, we saw that the maximum is _always_ located at the root of the tree, so it is relatively easy to identify. _But_ if we simply remove the key, we'll end up with two independent trees and no root. That would be a problem.
+
+Instead, we _swap_ the root with the element at the bottom right of the tree (in this case "L") where it can be removed without disrupting the structure of the tree. Here's what that looks like:
+
+```mermaid
+graph TD
+    A((L)) --> B((P))
+    A --> C((Q))
+    B --> D((E))
+    B --> E((M))
+    C --> F((A))
+    C --> G((X))
+
+    style A fill:red,stroke:red
+    style B fill:red,stroke:red
+    style C fill:red,stroke:red
+```
+
+Now, we can simply remove and return X. But there's a problem, as you might have guessed from all the red: the L is out of position. We can solve this by performing a "sink" operation to push L down to its correct position. This can be done by swapping L with the greater of its two children until it is greater than both.
+
+In this example, we swap Q and L:
+
+```mermaid
+graph TD
+    A((Q)) --> B((P))
+    A --> C((L))
+    B --> D((E))
+    B --> E((M))
+    C --> F((A))
+    C --> G(( ))
+
+    style A fill:green,stroke:green
+    style B fill:green,stroke:green
+    style C fill:green,stroke:green
+    style G fill:transparent,stroke:transparent
+```
+
+Now, L is smaller than its only child, A. We only performed one swap here, but it could have been several more. In any case, at this point, the heap condition is restored.
