@@ -203,3 +203,11 @@ graph TD
 ```
 
 Now, L is smaller than its only child, A. We only performed one swap here, but it could have been several more. In any case, at this point, the heap condition is restored.
+
+### Min vs. Max Priority Queues
+
+In the above examples, it was the maximum element we were interested in. However, we might have prefered the _minimum_ element instead. This is common in something like a task scheduler that links the most important next jobs with _low_ priority (e.g. "priority #1"). We don't really need to make many adjustments; we can simply sink larger priority elements and float the lower.
+
+## Code Implementation
+
+It is a good exercise to write out the code for a Priority Queue using binary heaps yourself. The implementation of the PriorityQueue ADT (both min and max) used in the `friendsbalt` package can be found in [PQ.py](./pq.py). Note that this is just _one_ implementation--others may appear totally different, even while creating the identical structure.
