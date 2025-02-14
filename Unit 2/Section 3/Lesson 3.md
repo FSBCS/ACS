@@ -48,7 +48,7 @@ For example, setting $X_r = Z$ is allowed because $X$ was originally the left ch
 ```mermaid
 graph TD;
     A((Z)) --> B((X));
-    A --> C[e\>Z];
+    A --> C[e > Z];
     B --> D[< X];
     B --> E[X < e < Z];
 ```
