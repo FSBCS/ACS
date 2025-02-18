@@ -79,11 +79,135 @@ As an exercise, draw the before and after of the rotation and show that it prese
 Nodes of an AVL tree become unbalanced only when a node is inserted or deleted. The process is more or less the same for insertions and deletions, so we'll suppose we're adding a node in this case. When a node is added and one of its ancestors $Z$ becomes unbalanced as a result (its balance factor becomes $2$ or $-2$), there are four possibilities:
 
 #### Left-Heavy Node (type I)
+In this case, a node is added somewhere in the left subtree of the left child of the root. Since this is a recursive operation, we assume that at this point all the lower subtrees have been balanced.
+
 ```mermaid
 graph TD;
-    Z((Z)) --> Y((Y))
+    Z((Z +2)) --> Y((Y +1))
     Z --- N1(( ))
+    Y --> X((X +0))
+    Y --- N2(( ))
 
     style N1 fill:transparent,stroke:transparent
-    linkStyle 1 stroke:transparent,arrowheadColor:transparent
+    style N2 fill:transparent,stroke:transparent
+```
+In this case, we can easily rebalance the tree with a right rotation:
+
+```mermaid
+graph TD;
+    Y((Y +0)) --> X((X +0))
+    Y --> Z((Z +0))
+```
+Notice that the balance factor is restored to $0$ for all nodes! It is worth taking a second to convince yourself of this: as an exercise, show that a right rotation in this scenario results in perfect balance.
+
+#### Left-Heavy Node (type II)
+
+In this scenario, a new node is added to the _right_ child of the left subtree:
+
+```mermaid
+graph TD;
+    Z((Z +2)) --> Y((Y -1))
+    Z --> N1(( ))
+    Y --> N2(( ))
+    Y --> X((X +0))
+
+    style N1 fill:transparent,stroke:transparent
+    style N2 fill:transparent,stroke:transparent
+```
+
+Here, a right rotation isn't going to fix the problem. _But_ we can perform a _left_ rotation on node $Y$:
+
+```mermaid
+graph TD;
+    Z((Z +2)) --> X((X +1))
+    Z --> N1(( ))
+    X --> Y((Y +0))
+    X --> N2(( ))
+
+    style N1 fill:transparent,stroke:transparent
+    style N2 fill:transparent,stroke:transparent
+```
+
+Now we're in the same type I left-heavy situation, so we can simply perform a right rotation on $Z$:
+
+```mermaid
+graph TD;
+    X((X +0)) --> Y((Y +0))
+    X --> Z((Z +0))
+```
+
+#### Right-Heavy Node (type I)
+This is the symmetric case of the type-I left-heavy node:
+
+```mermaid
+graph TD;
+    Z --- N1(( ))
+    Z((Z -2)) --> Y((Y -1))
+    Y --- N2(( ))
+    Y --> X((X +0))
+    
+    style N1 fill:transparent,stroke:transparent
+    style N2 fill:transparent,stroke:transparent
+```
+
+This is solved with a _left_ rotation.
+
+#### Right-Heavy Node (type II)
+This is the symmetric case of the type-II left-heavy node:
+
+```mermaid
+graph TD;
+    Z --- N1(( ))
+    Z((Z -2)) --> Y((Y +1))
+    Y --> X((X +0))
+    Y --- N2(( ))
+    
+    style N1 fill:transparent,stroke:transparent
+    style N2 fill:transparent,stroke:transparent
+```
+
+## Implementation in Code
+
+```python
+class AVLTree(BST):
+    def __init__(self):
+        self.root = None
+
+    def create_node(self, key, value):
+        return AVLNode(key, value)
+
+    def _height(self, node):
+        return node.height if node else 0
+    
+    def _balance_factor(self, node):
+        return self._height(node.left) - self._height(node.right)
+
+    def _put(self, key, value, node):
+        if not node: return self.create_node(key, value)
+
+        if key < node.key:
+            node.left = self._put(key, value, node.left)
+        elif key > node.key:
+            node.right = self._put(key, value, node.right)
+
+        node.height = 1 + max(self._height(node.left), self._height(node.right))
+
+        balance = self._balance_factor(node)
+
+        # Left Heavy
+        if balance > 1 and key < node.left.key:
+            return self._rotate_right(node)
+        # Right Heavy
+        if balance < -1 and key > node.right.key:
+            return self._rotate_left(node)
+        # Left-Right Case
+        if balance > 1 and key > node.left.key:
+            node.left = self._rotate_left(node.left)
+            return self._rotate_right(node)
+        # Right-Left Case
+        if balance < -1 and key < node.right.key:
+            node.right = self._rotate_right(node.right)
+            return self._rotate_left(node)
+        
+        return node 
 ```
