@@ -168,46 +168,22 @@ graph TD;
 
 ## Implementation in Code
 
+Surprisingly, we can provide a full AVL tree implementation with surprisingly small amounts of code added to a few of the operations.
+
+### Put Operation
+The put operation is identical to the BST version with the additional step of updating and balancing the nodes:
+
 ```python
-class AVLTree(BST):
-    def __init__(self):
-        self.root = None
-
-    def create_node(self, key, value):
-        return AVLNode(key, value)
-
-    def _height(self, node):
-        return node.height if node else 0
-    
-    def _balance_factor(self, node):
-        return self._height(node.left) - self._height(node.right)
-
     def _put(self, key, value, node):
-        if not node: return self.create_node(key, value)
-
-        if key < node.key:
-            node.left = self._put(key, value, node.left)
-        elif key > node.key:
-            node.right = self._put(key, value, node.right)
-
-        node.height = 1 + max(self._height(node.left), self._height(node.right))
-
-        balance = self._balance_factor(node)
-
-        # Left Heavy
-        if balance > 1 and key < node.left.key:
-            return self._rotate_right(node)
-        # Right Heavy
-        if balance < -1 and key > node.right.key:
-            return self._rotate_left(node)
-        # Left-Right Case
-        if balance > 1 and key > node.left.key:
-            node.left = self._rotate_left(node.left)
-            return self._rotate_right(node)
-        # Right-Left Case
-        if balance < -1 and key < node.right.key:
-            node.right = self._rotate_right(node.right)
-            return self._rotate_left(node)
-        
-        return node 
+        node = super()._put(key, value, node)
+        self._update(node)
+        return self._balance(node)
 ```
+
+The `_update(node)` function simply updates the height of the current node while the `_balance(node)` function performs the correct left and right rotations. The implementation of these are left as an exercise.
+
+There is some recursive trickery here we shouldn't get too worked up about. In short, we use superclass function to do the put operation (since it is the same as a basic BST) and then balance each node on the way back up.
+
+The recursive "trick" is that the superclass `_put()` is itself recursive, that is, it involves a call to `self._put()`. In this case `self` is still an `AVLTree` object, so that recursive call will invoke the `_put()` method of the `AVLTree` class. In other words, the `_put()` function and its superclass version are mutually recursive--they call each other! This ensures that they are _both_ invoked on every node, first the superclass then the child. So by the time we get to the line `self._update(node)` we can assume that not only has the put operation succeeded, but that the subtrees are all nicely balanced!
+
+The complete code for this is located in the `friendsbalt` package.

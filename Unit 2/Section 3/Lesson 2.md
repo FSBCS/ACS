@@ -100,17 +100,23 @@ def delete(self, key):
     root = self._delete(self,key, root)
 
 def _delete(self, key, node):
-    if node is None:   return None
-    if key < node.key: return self._delete(key, node.left)
-    if key > node.key: return self._delete(key, node.right)
+    if node is None:
+        return None
+    if key < node.key:
+        node.left = self._delete(key, node.left)
+    elif key > node.key:
+        node.right = self._delete(key, node.right)
+    else:
+        # Key match
+        if node.left is None:
+            return node.right
+        if node.right is None:
+            return node.left
 
-    #Key match
-    if node.left is None:  return node.right
-    if node.right is None: return node.left
-
-    successor = self.min(node.right)
-    node.key, node.value = successor.key, successor.value
-    node.right = self._delete(successor.key, node.right)
+        temp = node
+        node = self._min(temp.right)
+        node.right = self._delete_min(temp.right)
+        node.left = temp.left
 
     return node
 ```

@@ -61,7 +61,7 @@ Note that the above diagrams only show the keys. In our implementation, each nod
 To implement this data structure, we define a `Node` class such that each node has a key, value, and left and right children:
 
 ```python
-class Node:
+class BSTNode:
     def __init__(self, key, value, left=None, right=None):
         self.key = key
         self.value = value
