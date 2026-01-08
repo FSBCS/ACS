@@ -1,3 +1,0 @@
-# Section 2.1 - Hash Tables
-
-A **Hash Table** generalizes the notion of an array. Arrays pair data elements with a sequentially assigned integer index value. With hash tables, we can link values with a meaningful or "symbolic" key. While they have a variety of applications (_when in doubt, throw a hash table at it_ according to the old joke), their most obvious occurence in python is for the implementation of _dictionaries_.
